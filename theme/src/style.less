@@ -1,0 +1,180 @@
+/*!
+ * Stylesheet for ramverk1.
+ *
+ * This stylesheet is for the ramverk1 course
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+/**
+ * Import mixins.
+ */
+@import "mixin/clearfix.less";
+
+.clearfix() {
+    #design-mixin.clearfix()
+}
+
+
+
+/**
+* Normalize and reset the style.
+*/
+@import "normalize.css/normalize.less";
+
+
+
+/**
+* Font Awesome.
+*/
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+@import "@fortawesome/fontawesome-free/less/brands.less";
+
+
+
+/**
+ * Internal self contained modules, save in directory module/.
+ */
+//@import "module/kmom01.less";
+@import "module/stylechooser.less";  // Just an example module
+
+
+
+/**
+ * Import the typographic grid.
+ */
+@import "@desinax/typographic-grid/less/typography-font-families.less";
+@import "@desinax/typographic-grid/less/typography-defaults.less";
+
+// Show the grid
+.hgrid .inner-wrap {
+    @gridImage: "../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+}
+
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@import "base/base_kmom03.less";
+
+
+/**
+ * Import the vertical grid.
+ */
+@import "@desinax/vertical-grid/less/grid.less";
+
+// // Default grid, change to fit your requirements.
+// @columnWidth:   30;
+// @gutterWidth:   10;
+// @columns:       24;
+// @gridType:      "float"; // "flex"
+
+// .row {
+//     #desinax-vgrid.row();
+//
+//     background-color: #0f0;
+//     margin-bottom: 12px;
+// }
+
+
+
+// Import @desinax/figure
+@import "@desinax/figure/less/style.less";
+// @import "@desinax/figure/less/figure_from_canax.less";
+
+
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+// @import "layout/layout.less";
+// @import "layout/layout_kmom02.less";
+@import "layout/layout_vgrid.less";
+// @import "layout/responsive.less";
+@import "layout/responsive_kmom03.less";
+@import "layout/regions.less";     // To add style for ?regions
+
+
+/**
+ * A responsive menu.
+ */
+@import "@desinax/responsive-menu/less/responsive-menu.less";
+@import "@desinax/responsive-menu/less/media-queries.less";
+
+
+// style footer icons
+
+.ico-column {
+    // #desinax-vgrid.column(@columns / 2);
+    float: right;
+    margin-right: 30px;
+}
+
+.footer-column {
+    padding-top: 50px;
+}
+
+.footer-column-2 {
+    text-align: center;
+}
+
+.footer-column-1 {
+    padding-left: 20px;
+}
+
+.center {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: none;
+}
+
+.region-header {
+    font-size: 1.1em;
+    font-family: 'Alegreya Sans SC', 'Nunito Sans', sans-serif;
+}
+
+.img-middle {
+    margin: auto;
+}
+
+.col-2 {
+    float: left;
+    width: 50%;
+}
+
+.col-3 {
+    float: left;
+    width: 33.3%;
+}
+
+
+/**
+ * My own settings, not currently in their own module.
+ */
+
+//base_kmom03 variables
+@bgColorHtml: #fcf2fc;
+@bgColorBody: #fff;
+@textColorBody: #333;
+
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 18px;
+
+// Default font-families 'Open Sans', 'Segoe Script',
+@fontFamilyHeadings: 'Alegreya Sans SC', 'Nunito Sans', sans-serif;
+@fontFamilyBody:     @fontFamilyCalibri;
+@fontFamilyCode:     "monospace";
+
+//layout_vgrid variables
+@bgColorHeaderFooter: #fcf2fc; //#c0c0c0;
+@textColorHeaderFooter: #333;
+@borderColorInfoByline: #66bca4;
+@bgColorInfo: #dcefea;
+@textColorInfo: #4eb195;
+@bgColorBylilne: #fff;

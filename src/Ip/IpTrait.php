@@ -31,11 +31,11 @@ trait IpTrait
      *
      * @return void.
      */
-    public function validateIp($ip)
+    public function validateIp($ipAdr)
     {
-        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+        if (filter_var($ipAdr, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
             $this->validIPv4 = true;
-        } elseif (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+        } elseif (filter_var($ipAdr, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
             $this->validIPv6 = true;
         } else {
             $this->validIPv4 = false;
@@ -48,7 +48,7 @@ trait IpTrait
      *
      * @return bool for validIPv4.
      */
-    public function getIPv4()
+    public function isIPv4()
     {
         return $this->validIPv4;
     }
@@ -58,7 +58,7 @@ trait IpTrait
      *
      * @return bool for validIPv6.
      */
-    public function getIPv6()
+    public function isIPv6()
     {
         return $this->validIPv6;
     }
@@ -68,15 +68,15 @@ trait IpTrait
      *
      * @return string for domain.
      */
-    public function getDomain($ip)
+    public function getDomain($ipAddress)
     {
-        $this->validateIp($ip);
+        $this->validateIp($ipAddress);
         $domain = "";
         if ($this->validIPv4) {
-            $domain = gethostbyaddr($ip);
+            $domain = gethostbyaddr($ipAddress);
         }
         if ($this->validIPv6) {
-            $domain = gethostbyaddr($ip);
+            $domain = gethostbyaddr($ipAddress);
         }
         return $domain;
     }

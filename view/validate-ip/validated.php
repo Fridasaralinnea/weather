@@ -12,10 +12,10 @@ namespace Anax\View;
 
 ?><h1>Validate Ip-address</h1>
 
-<?php if ($IPv4) : ?>
+<?php if ($ipv4) : ?>
     <p><?= $ipAddress ?> is a valid IPv4 IP address</p>
     <p>Hostname: <?= $domain ?></p>
-<?php elseif ($IPv6) : ?>
+<?php elseif ($ipv6) : ?>
     <p><?= $ipAddress ?> is a valid IPv6 IP address</p>
     <p>Hostname: <?= $domain ?></p>
 <?php else : ?>

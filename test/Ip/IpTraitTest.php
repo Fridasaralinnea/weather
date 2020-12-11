@@ -30,10 +30,10 @@ class IpTraitTest extends TestCase
         $exp = true;
 
         $this->validateIp($ipv4);
-        $res1 = $this->getIPv4();
+        $res1 = $this->isIPv4();
 
         $this->validateIp($ipv6);
-        $res2 = $this->getIPv6();
+        $res2 = $this->isIPv6();
 
         $this->assertEquals($exp, $res1);
         $this->assertEquals($exp, $res2);

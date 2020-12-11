@@ -104,14 +104,14 @@ class IpController implements ContainerInjectableInterface
         $ipAddress = $session->get("ipAddress");
 
         $this->validateIp($ipAddress);
-        $IPv4 = $this->getIPv4();
-        $IPv6 = $this->getIPv6();
+        $ipv4 = $this->isIPv4();
+        $ipv6 = $this->isIPv6();
         $domain = $this->getDomain($ipAddress);
 
         $data = [
             "ipAddress" => $ipAddress ?? null,
-            "IPv4" => $IPv4 ?? null,
-            "IPv6" => $IPv6 ?? null,
+            "ipv4" => $ipv4 ?? null,
+            "ipv6" => $ipv6 ?? null,
             "domain" => $domain ?? null
         ];
 

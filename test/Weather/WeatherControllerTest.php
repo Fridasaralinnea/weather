@@ -10,12 +10,9 @@ use PHPUnit\Framework\TestCase;
  */
 class WeatherControllerTest extends TestCase
 {
-
     // Create the di container.
     protected $di;
     protected $controller;
-
-
 
     /**
      * Prepare before each test.
@@ -40,27 +37,15 @@ class WeatherControllerTest extends TestCase
         $this->controller->initialize();
     }
 
-    // $this->assertInstanceOf("\Anax\Response\Response", $res);
-    //
-    // $body = $res->getBody();
-    // $exp = "| ramverk1</title>";
-    // $this->assertContains($exp, $body);
-
     /**
      * Test the route "index" GET.
      */
     public function testIndexActionGet()
     {
         $res = $this->controller->indexActionGet();
-        // $this->assertInternalType("array", $res);
-        //
-        // $json = $res[0];
-        // $exp = "db is active";
-        // $this->assertContains($exp, $json["message"]);
+
         $this->assertInstanceOf("\Anax\Response\Response", $res);
     }
-
-
 
     /**
      * Test the route "index" POST.
@@ -68,15 +53,9 @@ class WeatherControllerTest extends TestCase
     public function testIndexActionPost()
     {
         $res = $this->controller->indexActionPost();
-        // $this->assertInternalType("array", $res);
-        //
-        // $json = $res[0];
-        // $exp = "db is active";
-        // $this->assertContains($exp, $json["message"]);
+
         $this->assertInstanceOf("\Anax\Response\Response", $res);
     }
-
-
 
     /**
      * Test the route "validated" GET.
@@ -84,14 +63,9 @@ class WeatherControllerTest extends TestCase
     public function testForecastActionGet()
     {
         $res = $this->controller->forecastActionGet();
-        // $this->assertInternalType("array", $res);
-        //
-        // $json = $res[0];
-        // $exp = "db is active";
-        // $this->assertContains($exp, $json["message"]);
+
         $this->assertInstanceOf("\Anax\Response\Response", $res);
     }
-
 
     /**
      * Test the route "validated" GET.
@@ -99,14 +73,9 @@ class WeatherControllerTest extends TestCase
     public function testReportActionGet()
     {
         $res = $this->controller->reportActionGet();
-        // $this->assertInternalType("array", $res);
-        //
-        // $json = $res[0];
-        // $exp = "db is active";
-        // $this->assertContains($exp, $json["message"]);
+
         $this->assertInstanceOf("\Anax\Response\Response", $res);
     }
-
 
     /**
      * Test the route "dump-di".
@@ -123,8 +92,6 @@ class WeatherControllerTest extends TestCase
         $this->assertContains("request", $json["di"]);
         $this->assertContains("response", $json["di"]);
     }
-
-
 
     /**
      * Test the route "forbidden".

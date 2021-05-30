@@ -2,7 +2,7 @@
 
 namespace Fla\Weather;
 
-use Fla\Curl\Curl;
+use Fla\Weather\Curl;
 
 /**
  * A class for getting user ip-address.
@@ -26,11 +26,7 @@ class Weather
      */
     public function __construct()
     {
-        // include(ANAX_INSTALL_PATH . '/config/vars.php');
-        // $this->apikey = $apiKeyIp;
         $this->baseUrl = "https://api.openweathermap.org/data/2.5/onecall";
-        // "?lat={lat}&lon={lon}&exclude={part}&appid={API key}";
-        // "/timemachine?lat={lat}&lon={lon}&dt={time}&appid={API key}";
         $this->curl = new Curl();
     }
 
@@ -38,11 +34,6 @@ class Weather
     {
         $this->apikey = $key;
     }
-
-    // public function setCurl($curl)
-    // {
-    //     $this->curl = $curl;
-    // }
 
     /**
      * Get weather forecast.
@@ -72,8 +63,6 @@ class Weather
         $url1 = $this->baseUrl . "/timemachine?lat=" . $lat . "&lon=" . $lon . "&dt=";
         $url2 = "&units=metric&appid=" . $this->apikey;
         $res = $this->curl->getWithMultiCurl($url1, $url2, $dateArray);
-        // $bla = implode(",", $dateArray);
-        // echo $bla;
 
         return $res;
     }

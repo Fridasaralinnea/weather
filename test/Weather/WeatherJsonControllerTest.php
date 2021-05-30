@@ -10,12 +10,9 @@ use PHPUnit\Framework\TestCase;
  */
 class WeatherJsonControllerTest extends TestCase
 {
-
     // Create the di container.
     protected $di;
     protected $controller;
-
-
 
     /**
      * Prepare before each test.
@@ -40,8 +37,6 @@ class WeatherJsonControllerTest extends TestCase
         $this->controller->initialize();
     }
 
-
-
     /**
      * Test the route "index".
      */
@@ -49,13 +44,7 @@ class WeatherJsonControllerTest extends TestCase
     {
         $res = $this->controller->indexActionGet();
         $this->assertInternalType("array", $res);
-
-        // $json = $res[0];
-        // $exp = "db is active";
-        // $this->assertContains($exp, $json["data"]);
     }
-
-
 
     /**
      * Test the route "dump-di".
@@ -72,8 +61,6 @@ class WeatherJsonControllerTest extends TestCase
         $this->assertContains("request", $json["di"]);
         $this->assertContains("response", $json["di"]);
     }
-
-
 
     /**
      * Test the route "forbidden".

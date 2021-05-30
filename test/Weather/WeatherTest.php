@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 class WeatherTest extends TestCase
 {
     protected $weather;
-    // protected $ipAdr;
 
     /**
      * Set up.
@@ -19,7 +18,6 @@ class WeatherTest extends TestCase
     protected function setUp()
     {
         $this->weather = new Weather();
-        // $this->ipAdr = "194.47.150.9";
     }
 
     /**

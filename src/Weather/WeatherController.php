@@ -4,13 +4,9 @@ namespace Fla\Weather;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-use Fla\Ip\IpTrait;
-use Fla\Ip2\IpGeo;
-use Fla\Ip2\CurrentIp;
-
-// use Anax\Route\Exception\ForbiddenException;
-// use Anax\Route\Exception\NotFoundException;
-// use Anax\Route\Exception\InternalErrorException;
+use Fla\Weather\IpTrait;
+use Fla\Weather\IpGeo;
+use Fla\Weather\CurrentIp;
 
 /**
  * A sample JSON controller to show how a controller class can be implemented.
@@ -35,8 +31,6 @@ class WeatherController implements ContainerInjectableInterface
     private $ipAddress;
     private $ipGeo;
 
-
-
     /**
      * The initialize method is optional and will always be called before the
      * target method/action. This is a convienient method where you could
@@ -50,13 +44,9 @@ class WeatherController implements ContainerInjectableInterface
         $this->db = "active";
         $this->currentIp = new CurrentIp();
         $this->ipGeo = new IpGeo();
-        // $this->currentIp = $this->di->get("currentip");
-        // $this->ipGeo = $this->di->get("ipgeo");
         $this->weather = $this->di->get("weather");
         $this->ipAddress = $this->currentIp->getCurrentIpAddress();
     }
-
-
 
     /**
      * This is the index method action GET, it handles:
@@ -200,26 +190,6 @@ class WeatherController implements ContainerInjectableInterface
         ]);
     }
 
-
-    // /**
-    //  * This is the index method action, it handles:
-    //  * GET METHOD mountpoint
-    //  * GET METHOD mountpoint/
-    //  * GET METHOD mountpoint/index
-    //  *
-    //  * @return array
-    //  */
-    // public function indexActionGet() : array
-    // {
-    //     // Deal with the action and return a response.
-    //     $json = [
-    //         "message" => __METHOD__ . ", \$db is {$this->db}",
-    //     ];
-    //     return [$json];
-    // }
-
-
-
     /**
      * This sample method dumps the content of $di.
      * GET mountpoint/dump-app
@@ -236,8 +206,6 @@ class WeatherController implements ContainerInjectableInterface
         ];
         return [$json];
     }
-
-
 
     /**
      * Try to access a forbidden resource.

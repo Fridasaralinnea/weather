@@ -2,4 +2,7 @@
 <?php
 
 //Api-key for http://api.ipstack.com/
-$api_key_ip = "Your API-key";
+$apiKeyIp = "Your API-key";
+
+//Api-key for https://home.openweathermap.org/
+$apiKeyWeather = "Your API-key";

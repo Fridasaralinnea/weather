@@ -4,13 +4,9 @@ namespace Fla\Weather;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-use Fla\Ip\IpTrait;
-use Fla\Ip2\IpGeo;
-use Fla\Ip2\CurrentIp;
-
-// use Anax\Route\Exception\ForbiddenException;
-// use Anax\Route\Exception\NotFoundException;
-// use Anax\Route\Exception\InternalErrorException;
+use Fla\Weather\IpTrait;
+use Fla\Weather\IpGeo;
+use Fla\Weather\CurrentIp;
 
 /**
  * A sample JSON controller to show how a controller class can be implemented.
@@ -35,8 +31,6 @@ class WeatherJsonController implements ContainerInjectableInterface
     private $ipAddress;
     private $ipGeo;
 
-
-
     /**
      * The initialize method is optional and will always be called before the
      * target method/action. This is a convienient method where you could
@@ -55,8 +49,6 @@ class WeatherJsonController implements ContainerInjectableInterface
         $this->weather = $this->di->get("weather");
         $this->ipAddress = $this->currentIp->getCurrentIpAddress();
     }
-
-
 
     /**
      * This is the index method action, it handles:
@@ -88,9 +80,6 @@ class WeatherJsonController implements ContainerInjectableInterface
             $weather = $this->weather->getWeatherForecast($lon, $lat);
         }
 
-        // $map = $this->ipGeo->getMapUrl($ipAddress);
-        // $latitude = $geotag[0];
-
         $data = [
             "ipAddress" => $ipAddress ?? null,
             "ipv4" => $ipv4 ?? null,
@@ -99,30 +88,10 @@ class WeatherJsonController implements ContainerInjectableInterface
             "geotag" => $geotag ?? null,
             "validate" => $validate ?? null,
             "weather" => $weather ?? null
-            // "map" => $map ?? null
         ];
-        // $request = $this->di->get("request");
-        //
-        // $ipAddress = $request->getGet("ipAddress");
-        //
-        // $this->validateIp($ipAddress);
-        // $ipv4 = $this->isIPv4();
-        // $ipv6 = $this->isIPv6();
-        // $domain = $this->getDomain($ipAddress);
-        // $geotag = $this->ipGeo->getGeoTag($ipAddress);
-        //
-        // $data = [
-        //     "ipAddress" => $ipAddress ?? null,
-        //     "ipv4" => $ipv4 ?? null,
-        //     "ipv6" => $ipv6 ?? null,
-        //     "domain" => $domain ?? null,
-        //     "geotag" => $geotag ?? null
-        // ];
 
         return [$data];
     }
-
-
 
     /**
      * This sample method dumps the content of $di.
@@ -140,8 +109,6 @@ class WeatherJsonController implements ContainerInjectableInterface
         ];
         return [$json];
     }
-
-
 
     /**
      * Try to access a forbidden resource.

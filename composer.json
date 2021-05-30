@@ -1,6 +1,6 @@
 {
-    "name" : "anax/noname",
-    "description": "A me page for the ramverk1 course.",
+    "name" : "Fla/Weather",
+    "description": "A module for weather.",
     "license": "MIT",
     "minimum-stability": "beta",
     "prefer-stable": true,
@@ -11,7 +11,9 @@
         }
     },
     "require": {
-        "anax/anax-ramverk1-me": "^1.0.0"
+        "php": ">=7.4",
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "anax/anax-cli": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"

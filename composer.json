@@ -1,6 +1,8 @@
 {
     "name" : "fla/weather",
+    "type": "library",
     "description": "A module for weather.",
+    "keywords": ["framework", "mvc", "weather", "learning"],
     "license": "MIT",
     "minimum-stability": "beta",
     "prefer-stable": true,
@@ -12,10 +14,12 @@
     },
     "require": {
         "php": ">=7.4",
-        "anax/anax-ramverk1-me": "^1.0.0",
+        "anax/commons": "^2.0.14",
         "anax/anax-cli": "^1.2"
     },
     "require-dev": {
+        "anax/anax": "^2.0.17",
+        "phpmetrics/phpmetrics": "^2",
         "phpunit/phpunit": "^7"
     }
 }

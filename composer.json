@@ -1,5 +1,5 @@
 {
-    "name" : "Fla/Weather",
+    "name" : "fla/weather",
     "description": "A module for weather.",
     "license": "MIT",
     "minimum-stability": "beta",
